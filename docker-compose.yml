@@ -8,10 +8,9 @@ services:
       - "3000:3000"
     volumes:
       - .:/usr/src/app
-    networks:
-      - mynetwork
     restart: always
 
 networks:
-  mynetwork:
-    driver: bridge
+  default:
+    external:
+      name: microservice_network
