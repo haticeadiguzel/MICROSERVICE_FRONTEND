@@ -7,10 +7,13 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/usr/src/app
+      - frontend_volume:/usr/src/app
     restart: always
 
 networks:
   default:
     external:
       name: microservice_network
+
+volumes:
+  frontend_volume: {}
